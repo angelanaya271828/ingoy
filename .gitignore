@@ -1,5 +1,6 @@
 venv/
-ingoy/
+.venv/
 __pycache__/
-*.pyc
+*.xlsx
+*.csv
 .ipynb_checkpoints/
