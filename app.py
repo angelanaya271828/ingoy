@@ -44,8 +44,8 @@ def cargar_datos_offline():
         
         if ruta_ops and ruta_act and ruta_wip:
             return pd.read_csv(ruta_ops), pd.read_csv(ruta_act), pd.read_csv(ruta_wip), [ruta_ops, ruta_act, ruta_wip]
-        
-        return None, None, None, []
+        else:
+            return None, None, None, []
 
 
 # ==========================================
