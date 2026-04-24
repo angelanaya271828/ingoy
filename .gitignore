@@ -2,7 +2,6 @@ venv/
 .venv/
 __pycache__/
 *.xlsx
-*.csv
 secrets.json
 indicaciones_del_proyecto.txt
 .ipynb_checkpoints/

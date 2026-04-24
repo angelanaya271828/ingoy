@@ -1,0 +1,101 @@
+FECHA_PROGRAMADA,ID_UNIDAD,ACTIVIDAD,AREA,TIEMPO,OPERADOR
+2026-04-22,CG4-188,Lavado de chassis y remoción de parafinas,ESTRUCTURA Y DISEÑO,1.5,AQUILEO GUTIÉRREZ
+2026-04-22,CG4-188,Colocar protección de radiador y mangueras,ESTRUCTURA Y DISEÑO,2.5,HASSEL HERNÁNDEZ
+2026-04-22,CG4-188,Desconectar unidad y acumuladores,ESTRUCTURA Y DISEÑO,0.5,JONATHAN MORA
+2026-04-22,CG4-188,Elaborar barrenos en chassis para defensas,ESTRUCTURA Y DISEÑO,0.75,JESÚS BARRAZA
+2026-04-22,CG4-188,Colocar y alinear cartolas sobre chassis,ESTRUCTURA Y DISEÑO,1.0,KEVIN SÁNCHEZ
+2026-04-22,CG4-188,Colocar y alinear aumentos sobre cartolas,ESTRUCTURA Y DISEÑO,0.5,LEONEL ARROYO
+2026-04-22,CG4-188,Fondear aumentos de chassis,ESTRUCTURA Y DISEÑO,0.5,JOSÉ DE JESÚS
+2026-04-22,CG4-188,Calibrar conjunto de escuadras de nivel,ESTRUCTURA Y DISEÑO,1.0,JONATHAN MORA
+2026-04-22,CG4-188,Habilitado de perfil 1 1/2 para filtro aire,ESTRUCTURA Y DISEÑO,0.5,LEONEL ARROYO
+2026-04-22,CG4-188,Nivelar y soldar tensores frontales,ESTRUCTURA Y DISEÑO,1.5,JOSÉ DE JESÚS
+2026-04-22,CG4-188,"Colocar y alinear placa ""Luna"" (Motor)",ESTRUCTURA Y DISEÑO,0.75,JESÚS BARRAZA
+2026-04-22,CG4-188,"Soldar placa ""Zeta"" y refuerzos de concha",ESTRUCTURA Y DISEÑO,0.75,LEONEL ARROYO
+2026-04-22,CG4-188,Maquilar portallantas en CNC,LAMINADO,1.0,DAVID MOLINA
+2026-04-22,CG4-188,Fabricar charola para puerta de baterí­as,LAMINADO,0.5,MATEO RODRÍGUEZ
+2026-04-22,CG4-188,Fabricar charola para filtro de aire,LAMINADO,0.5,MIGUEL RODRÍGUEZ
+2026-04-22,CG4-188,Cortar y doblar charola de puertas acceso,LAMINADO,1.0,MATEO RODRÍGUEZ
+2026-04-22,CG4-188,Laminar caja de filtro de aire,LAMINADO,1.5,MIGUEL RODRÍGUEZ
+2026-04-22,CG4-188,Rectificar y alinear costados (D-I) (Derecho),LAMINADO,1.0,DAVID MOLINA
+2026-04-22,CG4-188,Rectificar y alinear costados (D-I) (Izquierdo),LAMINADO,1.0,MATEO RODRÍGUEZ
+2026-04-22,CG4-188,Rectificar y alinear faldones laterales,LAMINADO,1.5,DAVID MOLINA
+2026-04-22,CG4-188,Instalar refuerzo de tapa diesel y Adblue,LAMINADO,1.0,MIGUEL RODRÍGUEZ
+2026-04-22,CG4-188,Fabricar e instalar postes de cabina,LAMINADO,2.0,MATEO RODRÍGUEZ
+2026-04-22,CG4-188,Pegar y barrenar puertas laterales,LAMINADO,1.5,MIGUEL RODRÍGUEZ
+2026-04-22,CG4-188,Fabricar arnés de techo,ELÉCTRICO,2.0,DIEGO CORONA
+2026-04-22,CG4-188,Fabricar arnés trasero y de parabrisas,ELÉCTRICO,1.5,JULIÁN RAMÍREZ
+2026-04-22,CG4-188,Preparar plafonerí­a y componentes luz,ELÉCTRICO,1.5,JULIÁN RAMÍREZ
+2026-04-22,CG4-188,Rutear cableado por zona frontal,ELÉCTRICO,2.0,DIEGO CORONA
+2026-04-22,CG4-188,Instalar arnés de timbre y estribos,ELÉCTRICO,1.5,JULIÁN RAMÍREZ
+2026-04-22,CG4-188,Resoldado general de conjunto de armado (Frontal y Trasera),ESTRUCTURA Y DISEÑO,0.83,KEVIN SÁNCHEZ
+2026-04-22,CG4-188,Resoldado general de conjunto de armado (Laterales y Techo),ESTRUCTURA Y DISEÑO,0.83,AQUILEO GUTIÉRREZ
+2026-04-22,CG4-188,Resoldado general de conjunto de armado (Piso),ESTRUCTURA Y DISEÑO,0.83,JONATHAN MORA
+2026-04-22,CG4-188,Torqueado general de tornillerí­a (Tren Motriz),ESTRUCTURA Y DISEÑO,0.5,JESÚS BARRAZA
+2026-04-22,CG4-188,Torqueado general de tornillerí­a (Suspensión),ESTRUCTURA Y DISEÑO,0.5,LEONEL ARROYO
+2026-04-22,CG4-188,Torqueado general de tornillerí­a (Carrocerí­a),ESTRUCTURA Y DISEÑO,0.5,KEVIN SÁNCHEZ
+2026-04-22,CG4-188,Marcar torqueo con C. Naranja,ESTRUCTURA Y DISEÑO,0.5,JESÚS BARRAZA
+2026-04-22,CG4-188,Fondeado general de chassis (Negro) (Frontal y Trasera),ESTRUCTURA Y DISEÑO,0.33,JOSÉ DE JESÚS
+2026-04-22,CG4-188,Fondeado general de chassis (Negro) (Laterales),ESTRUCTURA Y DISEÑO,0.33,LEONEL ARROYO
+2026-04-22,CG4-188,Fondeado general de chassis (Negro) (Inferior),ESTRUCTURA Y DISEÑO,0.33,AQUILEO GUTIÉRREZ
+2026-04-22,CG4-188,Sellar techo y detallar juntas,PINTURA,3.0,MARIO FONSECA
+2026-04-22,CG4-188,Aplicar fondo plaste en carrocerí­a (Frente),PINTURA,0.75,MIGUEL HERRERA
+2026-04-22,CG4-188,Aplicar fondo plaste en carrocerí­a (Atrí¡s),PINTURA,0.75,MIGUEL HERRERA
+2026-04-22,CG4-188,Aplicar fondo plaste en carrocerí­a (Techo),PINTURA,0.75,MIGUEL HERRERA
+2026-04-22,CG4-188,Aplicar fondo plaste en carrocerí­a (Laterales),PINTURA,0.75,MIGUEL HERRERA
+2026-04-22,CG4-188,Aplicar fondo epóxico en techo,PINTURA,1.5,MARIO FONSECA
+2026-04-22,CG4-188,Empapelar unidad completa (Cristales Frontales/Traseros),PINTURA,0.67,MIGUEL HERRERA
+2026-04-22,CG4-188,Empapelar unidad completa (Laterales),PINTURA,0.67,MIGUEL HERRERA
+2026-04-22,CG4-188,Empapelar unidad completa (Llantas y Chassis),PINTURA,0.67,MIGUEL HERRERA
+2026-04-22,CG4-188,Aplicar putty y lijado de detalles,PINTURA,2.0,MARIO FONSECA
+2026-04-22,CG4-188,Aplicar Eatching Primer,PINTURA,1.5,MIGUEL HERRERA
+2026-04-22,CG4-188,Pintura de color base (Cabina) (Frente),PINTURA,0.5,MARIO FONSECA
+2026-04-22,CG4-188,Pintura de color base (Cabina) (Atrí¡s),PINTURA,0.5,MIGUEL HERRERA
+2026-04-22,CG4-188,Pintura de color base (Cabina) (Techo),PINTURA,0.5,MARIO FONSECA
+2026-04-22,CG4-188,Pintura de color base (Cabina) (Laterales),PINTURA,0.5,MIGUEL HERRERA
+2026-04-22,CG4-188,Limpieza interior sólido y encintado,ARMADO Y TAPIZADO,2.0,ABIZAID ARAGÓN
+2026-04-22,CG4-188,Adaptar y soldar ductos de puertas,ARMADO Y TAPIZADO,2.0,LUIS ARROYO
+2026-04-22,CG4-188,Instalar y pijar ducterí­a general,ARMADO Y TAPIZADO,3.0,REY MENDOZA
+2026-04-22,CG4-188,Instalar falleba y aro de falleba,ARMADO Y TAPIZADO,1.0,PEDRO HERAS
+2026-04-22,CG4-188,Instalar vista de tolvas y huellas,ARMADO Y TAPIZADO,3.0,PEDRO HERAS
+2026-04-22,CG4-188,Tapizado de estribo y base chofer,ARMADO Y TAPIZADO,2.5,ABIZAID ARAGÓN
+2026-04-22,CG4-188,Instalación de pasamanos,ARMADO Y TAPIZADO,3.0,LUIS ARROYO
+2026-04-22,CG4-188,Instalación de asientos de pasajeros (Lado Derecho),ARMADO Y TAPIZADO,0.67,REY MENDOZA
+2026-04-22,CG4-188,Instalación de asientos de pasajeros (Lado Izquierdo),ARMADO Y TAPIZADO,0.67,REY MENDOZA
+2026-04-22,CG4-188,Instalación de asientos de pasajeros (Parte Trasera),ARMADO Y TAPIZADO,0.67,PEDRO HERAS
+2026-04-22,CG4-188,Instalar chapa pistón y pistones aire,DETALLADO,2.0,FRANCISCO OCHOA
+2026-04-22,CG4-188,Preparar e instalar espejos,DETALLADO,1.5,RAÚL GUTIÉRREZ
+2026-04-22,CG4-188,Instalar calcas exteriores y biseles,DETALLADO,1.5,ROGELIO MACÍAS
+2026-04-22,CG4-188,Sellar estribos y aplicar capa de goma,DETALLADO,2.0,RIGOBERTO CURIEL
+2026-04-22,CG4-188,Instalación de vidrios y parabrisas (Parabrisas),DETALLADO,0.75,YESSICA HERRERA
+2026-04-22,CG4-188,Instalación de vidrios y parabrisas (Medallón),DETALLADO,0.75,YESSICA HERRERA
+2026-04-22,CG4-188,Instalación de vidrios y parabrisas (Vidrios Laterales Der),DETALLADO,0.75,RAÚL GUTIÉRREZ
+2026-04-22,CG4-188,Instalación de vidrios y parabrisas (Vidrios Laterales Izq),DETALLADO,0.75,ROGELIO MACÍAS
+2026-04-22,CG4-188,Detallado final de pintura,DETALLADO,3.0,YESSICA HERRERA
+2026-04-22,CG4-188,Revisión de negro faltante en fosa,DETALLADO,2.0,FRANCISCO OCHOA
+2026-04-22,CG4-188,Limpieza de vidrios y aspirado final (Interior),DETALLADO,1.25,RIGOBERTO CURIEL
+2026-04-22,CG4-188,Limpieza de vidrios y aspirado final (Exterior),DETALLADO,1.25,RAÚL GUTIÉRREZ
+2026-04-22,CG4-188,Retoque de tapas y firmas de calidad,DETALLADO,1.0,ROGELIO MACÍAS
+2026-04-22,CG4-190,Pintura de color base (Cabina) (Frente),PINTURA,0.5,MARIO FONSECA
+2026-04-22,CG4-190,Adaptar y soldar ductos de puertas,ARMADO Y TAPIZADO,2.0,REY MENDOZA
+2026-04-22,CG4-190,Instalar y pijar ducterí­a general,ARMADO Y TAPIZADO,3.0,ABIZAID ARAGÓN
+2026-04-22,CG4-190,Instalar falleba y aro de falleba,ARMADO Y TAPIZADO,1.0,PEDRO HERAS
+2026-04-22,CG4-190,Instalar vista de tolvas y huellas,ARMADO Y TAPIZADO,3.0,LUIS ARROYO
+2026-04-22,CG4-190,Instalación de asientos de pasajeros (Lado Derecho),ARMADO Y TAPIZADO,0.67,PEDRO HERAS
+2026-04-22,CG4-190,Instalación de asientos de pasajeros (Lado Izquierdo),ARMADO Y TAPIZADO,0.67,PEDRO HERAS
+2026-04-22,CG4-190,Instalación de asientos de pasajeros (Parte Trasera),ARMADO Y TAPIZADO,0.67,REY MENDOZA
+2026-04-22,CG4-190,Instalar chapa pistón y pistones aire,DETALLADO,2.0,ROGELIO MACÍAS
+2026-04-22,CG4-190,Preparar e instalar espejos,DETALLADO,1.5,RIGOBERTO CURIEL
+2026-04-22,CG4-190,Instalar calcas exteriores y biseles,DETALLADO,1.5,RAÚL GUTIÉRREZ
+2026-04-22,CG4-190,Sellar estribos y aplicar capa de goma,DETALLADO,2.0,FRANCISCO OCHOA
+2026-04-22,CG4-190,Instalación de vidrios y parabrisas (Parabrisas),DETALLADO,0.75,YESSICA HERRERA
+2026-04-22,CG4-190,Instalación de vidrios y parabrisas (Medallón),DETALLADO,0.75,RIGOBERTO CURIEL
+2026-04-22,CG4-190,Instalación de vidrios y parabrisas (Vidrios Laterales Der),DETALLADO,0.75,RAÚL GUTIÉRREZ
+2026-04-22,CG4-190,Instalación de vidrios y parabrisas (Vidrios Laterales Izq),DETALLADO,0.75,ROGELIO MACÍAS
+2026-04-22,CG4-190,Revisión de negro faltante en fosa,DETALLADO,2.0,YESSICA HERRERA
+2026-04-22,CG4-190,Limpieza de vidrios y aspirado final (Interior),DETALLADO,1.25,RIGOBERTO CURIEL
+2026-04-22,CG4-190,Limpieza de vidrios y aspirado final (Exterior),DETALLADO,1.25,RAÚL GUTIÉRREZ
+2026-04-22,CG4-190,Retoque de tapas y firmas de calidad,DETALLADO,1.0,FRANCISCO OCHOA
+2026-04-22,CG4-191,Instalación de asientos de pasajeros (Lado Derecho),ARMADO Y TAPIZADO,0.67,PEDRO HERAS
+2026-04-22,CG4-191,Instalación de asientos de pasajeros (Lado Izquierdo),ARMADO Y TAPIZADO,0.67,REY MENDOZA
+2026-04-22,CG4-191,Sellar estribos y aplicar capa de goma,DETALLADO,2.0,ROGELIO MACÍAS
+2026-04-22,CG4-191,Instalación de vidrios y parabrisas (Parabrisas),DETALLADO,0.75,RIGOBERTO CURIEL
