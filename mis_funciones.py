@@ -6,7 +6,6 @@ import gspread
 from google.oauth2.service_account import Credentials
 import numpy as np
 import pandas as pd
-from IPython.display import display
 import os
 import glob
 from datetime import datetime
@@ -54,7 +53,7 @@ def lectura_hoja_gs(id_libro,
             datos = hoja.get_all_records()
             df = pd.DataFrame(datos)
             print(f"   - Total de registros: {len(df)}")
-            display(df.head(3))
+            print(df.head(3))
 
             # Guardar nueva versión
             df.to_csv(archivo_db_offline, index = False)
