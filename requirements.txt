@@ -3,3 +3,5 @@ streamlit-extras
 pandas
 plotly
 matplotlib
+gspread
+google-auth
