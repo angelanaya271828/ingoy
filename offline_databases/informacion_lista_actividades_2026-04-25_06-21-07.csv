@@ -1,0 +1,88 @@
+ID_PROCESO,ID_SUBPROCESO,KEY_SUBPROCESO,DESC_PROCESO,ACTIVIDAD,AREA,TIEMPO,DEPENDENCIA
+1,1,1.1,PROCESAMIENTO DE FIBRA,Preparación de moldes (Limpieza y cera),FIBRAS,1.0,
+1,2,1.2,PROCESAMIENTO DE FIBRA,Aplicación de Gelcoat,FIBRAS,0.5,1.1
+1,3,1.3.1,PROCESAMIENTO DE FIBRA,Laminado de capas de fibra de vidrio (Frente),FIBRAS,0.5,1.2
+1,3,1.3.2,PROCESAMIENTO DE FIBRA,Laminado de capas de fibra de vidrio (Trasera),FIBRAS,0.5,1.2
+1,3,1.3.3,PROCESAMIENTO DE FIBRA,Laminado de capas de fibra de vidrio (Costados),FIBRAS,0.5,1.2
+1,3,1.3.4,PROCESAMIENTO DE FIBRA,Laminado de capas de fibra de vidrio (Techo),FIBRAS,0.5,1.2
+1,4,1.4,PROCESAMIENTO DE FIBRA,Desmolde y recorte de excedentes,FIBRAS,1.5,"1.3.1, 1.3.2, 1.3.3, 1.3.4"
+1,5,1.5.1,PROCESAMIENTO DE FIBRA,Detallado de piezas de fibra (Lijado base) (Frente),FIBRAS,0.5,1.4
+1,5,1.5.2,PROCESAMIENTO DE FIBRA,Detallado de piezas de fibra (Lijado base) (Trasera),FIBRAS,0.5,1.4
+1,5,1.5.3,PROCESAMIENTO DE FIBRA,Detallado de piezas de fibra (Lijado base) (Costados),FIBRAS,0.5,1.4
+1,5,1.5.4,PROCESAMIENTO DE FIBRA,Detallado de piezas de fibra (Lijado base) (Techo),FIBRAS,0.5,1.4
+2,1,2.1,PREPARACIÓN ESTRUCTURAL,Lavado de chassis y remoción de parafinas,ESTRUCTURA Y DISEÑO,1.5,
+2,2,2.2,PREPARACIÓN ESTRUCTURAL,Colocar protección de radiador y mangueras,ESTRUCTURA Y DISEÑO,2.5,2.1
+2,3,2.3,PREPARACIÓN ESTRUCTURAL,Desconectar unidad y acumuladores,ESTRUCTURA Y DISEÑO,0.5,2.2
+2,4,2.4,PREPARACIÓN ESTRUCTURAL,Elaborar barrenos en chassis para defensas,ESTRUCTURA Y DISEÑO,0.75,
+2,5,2.5,PREPARACIÓN ESTRUCTURAL,Colocar y alinear cartolas sobre chassis,ESTRUCTURA Y DISEÑO,1.0,2.3
+3,1,3.1,ENSAMBLE DE ESQUELETO,Colocar y alinear aumentos sobre cartolas,ESTRUCTURA Y DISEÑO,0.5,2.5
+3,2,3.2,ENSAMBLE DE ESQUELETO,Fondear aumentos de chassis,ESTRUCTURA Y DISEÑO,0.5,3.1
+3,3,3.3,ENSAMBLE DE ESQUELETO,Calibrar conjunto de escuadras de nivel,ESTRUCTURA Y DISEÑO,1.0,3.2
+3,4,3.4,ENSAMBLE DE ESQUELETO,Habilitado de perfil 1 1/2 para filtro aire,ESTRUCTURA Y DISEÑO,0.5,3.3
+3,5,3.5,ENSAMBLE DE ESQUELETO,Nivelar y soldar tensores frontales,ESTRUCTURA Y DISEÑO,1.5,3.4
+3,6,3.6,ENSAMBLE DE ESQUELETO,"Colocar y alinear placa ""Luna"" (Motor)",ESTRUCTURA Y DISEÑO,0.75,3.5
+3,7,3.7,ENSAMBLE DE ESQUELETO,"Soldar placa ""Zeta"" y refuerzos de concha",ESTRUCTURA Y DISEÑO,0.75,3.6
+4,1,4.1,LAMINADO Y CNC,Maquilar portallantas en CNC,LAMINADO,1.0,
+4,2,4.2,LAMINADO Y CNC,Fabricar charola para puerta de baterí­as,LAMINADO,0.5,
+4,3,4.3,LAMINADO Y CNC,Fabricar charola para filtro de aire,LAMINADO,0.5,
+4,4,4.4,LAMINADO Y CNC,Cortar y doblar charola de puertas acceso,LAMINADO,1.0,
+4,5,4.5,LAMINADO Y CNC,Laminar caja de filtro de aire,LAMINADO,1.5,3.7
+4,6,4.6.1,LAMINADO Y CNC,Rectificar y alinear costados (D-I) (Derecho),LAMINADO,1.0,4.5
+4,6,4.6.2,LAMINADO Y CNC,Rectificar y alinear costados (D-I) (Izquierdo),LAMINADO,1.0,4.5
+4,7,4.7,LAMINADO Y CNC,Rectificar y alinear faldones laterales,LAMINADO,1.5,"4.6.1, 4.6.2"
+4,8,4.8,LAMINADO Y CNC,Instalar refuerzo de tapa diesel y Adblue,LAMINADO,1.0,4.7
+4,9,4.9,LAMINADO Y CNC,Fabricar e instalar postes de cabina,LAMINADO,2.0,4.8
+4,10,4.1,LAMINADO Y CNC,Pegar y barrenar puertas laterales,LAMINADO,1.5,4.9
+5,1,5.1,SISTEMA ELÉCTRICO BASE,Fabricar arnés de techo,ELÉCTRICO,2.0,
+5,2,5.2,SISTEMA ELÉCTRICO BASE,Fabricar arnés trasero y de parabrisas,ELÉCTRICO,1.5,
+5,3,5.3,SISTEMA ELÉCTRICO BASE,Preparar plafonerí­a y componentes luz,ELÉCTRICO,1.5,
+5,4,5.4,SISTEMA ELÉCTRICO BASE,Rutear cableado por zona frontal,ELÉCTRICO,2.0,4.1
+5,5,5.5,SISTEMA ELÉCTRICO BASE,Instalar arnés de timbre y estribos,ELÉCTRICO,1.5,4.1
+6,1,6.1.1,ACABADOS ESTRUCTURALES,Resoldado general de conjunto de armado (Frontal y Trasera),ESTRUCTURA Y DISEÑO,0.83,4.1
+6,1,6.1.2,ACABADOS ESTRUCTURALES,Resoldado general de conjunto de armado (Laterales y Techo),ESTRUCTURA Y DISEÑO,0.83,4.1
+6,1,6.1.3,ACABADOS ESTRUCTURALES,Resoldado general de conjunto de armado (Piso),ESTRUCTURA Y DISEÑO,0.83,4.1
+6,2,6.2.1,ACABADOS ESTRUCTURALES,Torqueado general de tornillerí­a (Tren Motriz),ESTRUCTURA Y DISEÑO,0.5,"6.1.1, 6.1.2, 6.1.3"
+6,2,6.2.2,ACABADOS ESTRUCTURALES,Torqueado general de tornillerí­a (Suspensión),ESTRUCTURA Y DISEÑO,0.5,"6.1.1, 6.1.2, 6.1.3"
+6,2,6.2.3,ACABADOS ESTRUCTURALES,Torqueado general de tornillerí­a (Carrocerí­a),ESTRUCTURA Y DISEÑO,0.5,"6.1.1, 6.1.2, 6.1.3"
+6,3,6.3,ACABADOS ESTRUCTURALES,Marcar torqueo con C. Naranja,ESTRUCTURA Y DISEÑO,0.5,"6.2.1, 6.2.2, 6.2.3"
+6,4,6.4.1,ACABADOS ESTRUCTURALES,Fondeado general de chassis (Negro) (Frontal y Trasera),ESTRUCTURA Y DISEÑO,0.33,6.3
+6,4,6.4.2,ACABADOS ESTRUCTURALES,Fondeado general de chassis (Negro) (Laterales),ESTRUCTURA Y DISEÑO,0.33,6.3
+6,4,6.4.3,ACABADOS ESTRUCTURALES,Fondeado general de chassis (Negro) (Inferior),ESTRUCTURA Y DISEÑO,0.33,6.3
+7,1,7.1,PREPARACIÓN Y PINTURA,Sellar techo y detallar juntas,PINTURA,3.0,"6.4.1, 6.4.2, 6.4.3"
+7,2,7.2.1,PREPARACIÓN Y PINTURA,Aplicar fondo plaste en carrocerí­a (Frente),PINTURA,0.75,7.1
+7,2,7.2.2,PREPARACIÓN Y PINTURA,Aplicar fondo plaste en carrocerí­a (Atrí¡s),PINTURA,0.75,7.1
+7,2,7.2.3,PREPARACIÓN Y PINTURA,Aplicar fondo plaste en carrocerí­a (Techo),PINTURA,0.75,7.1
+7,2,7.2.4,PREPARACIÓN Y PINTURA,Aplicar fondo plaste en carrocerí­a (Laterales),PINTURA,0.75,7.1
+7,3,7.3,PREPARACIÓN Y PINTURA,Aplicar fondo epóxico en techo,PINTURA,1.5,7.1
+7,4,7.4.1,PREPARACIÓN Y PINTURA,Empapelar unidad completa (Cristales Frontales/Traseros),PINTURA,0.67,"7.2.1, 7.2.2, 7.2.3, 7.2.4"
+7,4,7.4.2,PREPARACIÓN Y PINTURA,Empapelar unidad completa (Laterales),PINTURA,0.67,"7.2.1, 7.2.2, 7.2.3, 7.2.4"
+7,4,7.4.3,PREPARACIÓN Y PINTURA,Empapelar unidad completa (Llantas y Chassis),PINTURA,0.67,"7.2.1, 7.2.2, 7.2.3, 7.2.4"
+7,5,7.5,PREPARACIÓN Y PINTURA,Aplicar putty y lijado de detalles,PINTURA,2.0,"7.4.1, 7.4.2, 7.4.3"
+7,6,7.6,PREPARACIÓN Y PINTURA,Aplicar Eatching Primer,PINTURA,1.5,7.5
+7,7,7.7.1,PREPARACIÓN Y PINTURA,Pintura de color base (Cabina) (Frente),PINTURA,0.5,7.6
+7,7,7.7.2,PREPARACIÓN Y PINTURA,Pintura de color base (Cabina) (Atrí¡s),PINTURA,0.5,7.6
+7,7,7.7.3,PREPARACIÓN Y PINTURA,Pintura de color base (Cabina) (Techo),PINTURA,0.5,7.6
+7,7,7.7.4,PREPARACIÓN Y PINTURA,Pintura de color base (Cabina) (Laterales),PINTURA,0.5,7.6
+8,1,8.1,ARMADO E INTERIORES,Limpieza interior sólido y encintado,ARMADO Y TAPIZADO,2.0,"7.7.1, 7.7.2, 7.7.3, 7.7.4"
+8,2,8.2,ARMADO E INTERIORES,Adaptar y soldar ductos de puertas,ARMADO Y TAPIZADO,2.0,8.1
+8,3,8.3,ARMADO E INTERIORES,Instalar y pijar ducterí­a general,ARMADO Y TAPIZADO,3.0,8.2
+8,4,8.4,ARMADO E INTERIORES,Instalar falleba y aro de falleba,ARMADO Y TAPIZADO,1.0,8.3
+8,5,8.5,ARMADO E INTERIORES,Instalar vista de tolvas y huellas,ARMADO Y TAPIZADO,3.0,8.4
+8,6,8.6,ARMADO E INTERIORES,Tapizado de estribo y base chofer,ARMADO Y TAPIZADO,2.5,8.5
+8,7,8.7,ARMADO E INTERIORES,Instalación de pasamanos,ARMADO Y TAPIZADO,3.0,8.6
+8,8,8.8.1,ARMADO E INTERIORES,Instalación de asientos de pasajeros (Lado Derecho),ARMADO Y TAPIZADO,0.67,8.7
+8,8,8.8.2,ARMADO E INTERIORES,Instalación de asientos de pasajeros (Lado Izquierdo),ARMADO Y TAPIZADO,0.67,8.7
+8,8,8.8.3,ARMADO E INTERIORES,Instalación de asientos de pasajeros (Parte Trasera),ARMADO Y TAPIZADO,0.67,8.7
+9,1,9.1,DETALLADO Y SALIDA,Instalar chapa pistón y pistones aire,DETALLADO,2.0,"8.8.1, 8.8.2, 8.8.3"
+9,2,9.2,DETALLADO Y SALIDA,Preparar e instalar espejos,DETALLADO,1.5,"8.8.1, 8.8.2, 8.8.3"
+9,3,9.3,DETALLADO Y SALIDA,Instalar calcas exteriores y biseles,DETALLADO,1.5,"8.8.1, 8.8.2, 8.8.3"
+9,4,9.4,DETALLADO Y SALIDA,Sellar estribos y aplicar capa de goma,DETALLADO,2.0,9.1
+9,5,9.5.1,DETALLADO Y SALIDA,Instalación de vidrios y parabrisas (Parabrisas),DETALLADO,0.75,9.4
+9,5,9.5.2,DETALLADO Y SALIDA,Instalación de vidrios y parabrisas (Medallón),DETALLADO,0.75,9.4
+9,5,9.5.3,DETALLADO Y SALIDA,Instalación de vidrios y parabrisas (Vidrios Laterales Der),DETALLADO,0.75,9.4
+9,5,9.5.4,DETALLADO Y SALIDA,Instalación de vidrios y parabrisas (Vidrios Laterales Izq),DETALLADO,0.75,9.4
+9,6,9.6,DETALLADO Y SALIDA,Detallado final de pintura,DETALLADO,3.0,"9.5.1, 9.5.2, 9.5.3, 9.5.4"
+9,7,9.7,DETALLADO Y SALIDA,Revisión de negro faltante en fosa,DETALLADO,2.0,9.6
+9,8,9.8.1,DETALLADO Y SALIDA,Limpieza de vidrios y aspirado final (Interior),DETALLADO,1.25,9.7
+9,8,9.8.2,DETALLADO Y SALIDA,Limpieza de vidrios y aspirado final (Exterior),DETALLADO,1.25,9.7
+9,9,9.9,DETALLADO Y SALIDA,Retoque de tapas y firmas de calidad,DETALLADO,1.0,9.7
