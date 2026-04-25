@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_extras.metric_cards import style_metric_cards
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import pandas as pd
@@ -15,10 +16,10 @@ importlib.reload(mis_funciones)
 # CONFIGURACIÓN DE PÁGINA
 # ==========================================
 st.set_page_config(
-    page_title="Tablero de Control - Planta",
-    page_icon="🚌",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title = "Ingoy: Dashboard",
+    page_icon = "imagenes\ingoy_final.ico",
+    layout = "wide",
+    initial_sidebar_state = "expanded"
 )
 
 # ==========================================
@@ -116,15 +117,34 @@ elif opcion == "Información de operadores":
     st.markdown("### 📊 Indicadores diarios")
     kpi1, kpi2, kpi3, kpi4 = st.columns(4)
     
-    with kpi1:
-        st.metric("Total de Operadores", total_operadores)
-    with kpi2:
-        st.metric(f"Activos el {nombre_dia}", activos_hoy)
-    with kpi3:
-        st.metric("Vacaciones programadas", vacaciones)
-    with kpi4:
-        st.metric("Faltas", faltas)
-        
+    # Creamos las 4 columnas
+    k1, k2, k3, k4 = st.columns(4)
+    
+    with k1:
+        mis_funciones.crear_tarjeta_kpi(
+            titulo="Total de operadores", 
+            valor=total_operadores, 
+            descripcion="Registrados en el sistema"
+        )
+    with k2:
+        mis_funciones.crear_tarjeta_kpi(
+            titulo=f"Activos el {nombre_dia}", 
+            valor=activos_hoy, 
+            descripcion="Personal en turno"
+        )
+    with k3:
+        mis_funciones.crear_tarjeta_kpi(
+            titulo="Faltas", 
+            valor=0, 
+            descripcion="Ausencias no justificadas"
+        )
+    with k4:
+        mis_funciones.crear_tarjeta_kpi(
+            titulo="Vacaciones", 
+            valor=0, 
+            descripcion="Periodos programados"
+        )
+
     st.markdown("---")
     
     # Total por área en el catálogo
@@ -141,19 +161,22 @@ elif opcion == "Información de operadores":
 
     # Aplicar Estilo de Mapa de Calor
     def estilo_fila_completa(row):
-        # Obtenemos el valor de la columna de porcentaje
         val = row['% Asistencia']
         
-        # Usamos el mapa de colores Rojo-Amarillo-Verde (RdYlGn)
-        cmap = plt.get_cmap('RdYlGn')
-        norm = plt.Normalize(0, 100) # Normalizar de 0 a 100
+        # Define tus colores hexadecimales
+        mis_colores = ["#51A2FF", "#162456"] 
         
-        # Convertimos el valor en un color hexadecimal
-        color = mcolors.to_hex(cmap(norm(val)))
+        # Creamos la paleta (cmap) personalizada
+        mi_cmap = mcolors.LinearSegmentedColormap.from_list("Paleta_Ingoy", mis_colores)
         
-        # Retornamos el estilo para cada celda de la fila
-        # Usamos color: black para que el texto sea legible sobre el fondo de color
-        return [f'background-color: {color}; color: black; font-weight: bold;' for _ in row]
+        # Normalizamos de 0 a 100
+        norm = mcolors.Normalize(vmin=0, vmax=100)
+        
+        # Calculamos el color exacto para la celda
+        color_fondo = mcolors.to_hex(mi_cmap(norm(val)))
+        
+        # Retornamos el estilo
+        return [f'background-color: {color_fondo}; color: #000000; font-weight: 600;' for _ in row]
 
     # Aplicamos la función a lo largo del eje de las columnas (axis=1)
     df_estilizado = df_resumen_area.style.apply(estilo_fila_completa, axis=1).format({
@@ -167,7 +190,7 @@ elif opcion == "Información de operadores":
     st.markdown("---")
 
     # Detalle Individual
-    with st.expander(f"👁️ Ver detalle de operadores activos el {nombre_dia}"):
+    with st.expander(f"Ver detalle de operadores activos el {nombre_dia}"):
         df_viz_ops_activos = df_ops_activos[["AREA", "OPERADOR"]].sort_values(by=['AREA', 'OPERADOR'], ascending=[True, True]).copy()
         st.dataframe(df_viz_ops_activos, width='stretch', hide_index=True)
     
@@ -287,26 +310,146 @@ elif opcion == "Actividades Estándar":
 
 # --- VISTA: PROGRAMACIÓN ---
 elif opcion == "Programación del Día":
-    st.title("📅 Programación Final de Actividades")
+    st.title("📅 Programación Final y Asignaciones")
     
-    col1, col2 = st.columns([1, 2])
+    # 1. Buscador de fecha
+    col1, col2 = st.columns([1, 3])
     with col1:
-        fecha_target = st.text_input("Ingrese fecha (YYYY-MM-DD):", value="2026-04-22")
+        fecha_target = st.text_input("Ingrese fecha del plan (YYYY-MM-DD):", value="2026-04-22")
     
     if st.button("🔍 Buscar Programación", type="primary"):
-        # Buscamos archivos que contengan 'asignacion' y la fecha
         patron_plan = os.path.join(PATH_DB_OFFLINE, "**", f"*asignacion_{fecha_target}*.csv")
         archivos_plan = glob.glob(patron_plan, recursive=True)
         
         if archivos_plan:
             archivos_plan.sort(reverse=True)
             df_plan = pd.read_csv(archivos_plan[0])
-            st.success(f"✅ Cargado: {os.path.basename(archivos_plan[0])}")
-            st.dataframe(df_plan, width = 'stretch', hide_index=True)
+            st.success(f"✅ Plan cargado: {os.path.basename(archivos_plan[0])}")
             
-            # Estadísticas rápidas en el modo oscuro
-            m1, m2 = st.columns(2)
-            m1.metric("Actividades Totales", len(df_plan))
-            m2.metric("Unidades Atendidas", df_plan['ID_UNIDAD'].nunique())
+            # --- CREAMOS LAS DOS SECCIONES (TABS) ---
+            tab_operadores, tab_unidades = st.tabs([
+                "👷‍♂️ 1. Resumen por Operador", 
+                "🚌 2. Resumen por Unidad (Gantt)"
+            ])
+            
+            # ==========================================
+            # APARTADO 1: RESUMEN POR OPERADOR
+            # ==========================================
+            with tab_operadores:
+                st.subheader("📊 KPIs Generales del Día")
+                
+                # Cálculos rápidos para KPIs
+                total_tareas_hoy = len(df_plan)
+                ops_asignados = df_plan['OPERADOR'].nunique()
+                horas_totales = df_plan['TIEMPO'].sum() if 'TIEMPO' in df_plan.columns else 0
+                
+                # Reutilizamos la función de tarjetas que creamos antes
+                k1, k2, k3 = st.columns(3)
+                with k1:
+                    mis_funciones.crear_tarjeta_kpi("Tareas Asignadas", total_tareas_hoy, "En toda la planta")
+                with k2:
+                    mis_funciones.crear_tarjeta_kpi("Operadores Activos", ops_asignados, "Con tareas programadas")
+                with k3:
+                    mis_funciones.crear_tarjeta_kpi("Carga Total (Hrs)", f"{horas_totales:.1f}", "Suma de tiempos estimados")
+                
+                st.markdown("---")
+                st.subheader("🔍 Filtrar Asignación por Personal")
+                
+                # Filtros en cadena (Dropdowns)
+                col_filtro1, col_filtro2 = st.columns(2)
+                
+                # Asumimos que df_plan tiene la columna 'AREA' y 'OPERADOR'
+                areas_disponibles = df_plan['AREA'].dropna().unique() if 'AREA' in df_plan.columns else ["N/A"]
+                
+                with col_filtro1:
+                    area_sel = st.selectbox("1. Selecciona el Área:", sorted(areas_disponibles))
+                
+                # Filtramos los operadores que pertenecen al área seleccionada
+                ops_en_area = df_plan[df_plan['AREA'] == area_sel]['OPERADOR'].dropna().unique() if 'AREA' in df_plan.columns else df_plan['OPERADOR'].unique()
+                
+                with col_filtro2:
+                    op_sel = st.selectbox("2. Selecciona el Operador:", sorted(ops_en_area))
+                
+                # Mostramos la tabla filtrada
+                df_op_filtrado = df_plan[df_plan['OPERADOR'] == op_sel]
+                
+                st.markdown(f"**Actividades asignadas a: {op_sel}**")
+                st.dataframe(df_op_filtrado, width='stretch', hide_index=True)
+
+
+            # ==========================================
+            # APARTADO 2: RESUMEN POR UNIDAD (GANTT ESTATUS)
+            # ==========================================
+            with tab_unidades:
+                st.subheader("🚌 Avance y Programación por Unidad")
+                
+                # Aseguramos que el ID_UNIDAD exista en el plan
+                if 'ID_UNIDAD' in df_plan.columns:
+                    unidades_activas = df_plan['ID_UNIDAD'].dropna().unique()
+                    unidad_sel = st.selectbox("Selecciona la Unidad a analizar:", sorted(unidades_activas))
+                    
+                    # 1. Identificamos qué tareas le tocan a esta unidad HOY
+                    tareas_hoy_unidad = df_plan[df_plan['ID_UNIDAD'] == unidad_sel]['KEY_SUBPROCESO'].astype(str).tolist()
+                    
+                    # 2. Preparamos el DataFrame del Gantt (Usamos la ruta crítica de df_act)
+                    import plotly.express as px
+                    from datetime import datetime, timedelta
+                    
+                    df_gantt_u = df_act.copy()
+                    df_gantt_u['KEY_SUBPROCESO'] = df_gantt_u['KEY_SUBPROCESO'].astype(str)
+                    
+                    # Lógica para determinar ESTATUS ("Ya Hecho", "Hoy", "Pendiente")
+                    # Asumimos que el orden en df_act es la secuencia real.
+                    estatus_lista = []
+                    encontramos_hoy = False
+                    
+                    for key in df_gantt_u['KEY_SUBPROCESO']:
+                        if key in tareas_hoy_unidad:
+                            estatus_lista.append("Programado Hoy")
+                            encontramos_hoy = True
+                        elif not encontramos_hoy:
+                            # Si está antes de las tareas de hoy, asumimos que ya se hizo
+                            estatus_lista.append("Ya Hecho")
+                        else:
+                            # Si está después de las tareas de hoy, está pendiente
+                            estatus_lista.append("Pendiente")
+                            
+                    df_gantt_u['ESTATUS'] = estatus_lista
+                    
+                    # (Reutilizamos una versión simplificada de tu generador de fechas para graficar)
+                    base_t = datetime.today().replace(hour=8, minute=0, second=0, microsecond=0)
+                    df_gantt_u['Inicio'] = [base_t + timedelta(hours=i*2) for i in range(len(df_gantt_u))] # Fechas dummy secuenciales para visualización
+                    df_gantt_u['Fin'] = df_gantt_u['Inicio'] + pd.to_timedelta(df_gantt_u['TIEMPO'].fillna(1), unit='h')
+                    df_gantt_u['Tarea'] = df_gantt_u['KEY_SUBPROCESO'] + " - " + df_gantt_u['ACTIVIDAD']
+
+                    # 3. Dibujamos el Gantt con colores por estatus
+                    mapa_colores = {
+                        "Ya Hecho": "#2A3654",       # Azul oscuro/Grisáceo (Apagado)
+                        "Programado Hoy": "#00C853", # Verde vibrante (Resalta)
+                        "Pendiente": "#30363D"       # Gris oscuro
+                    }
+                    
+                    fig = px.timeline(
+                        df_gantt_u, 
+                        x_start="Inicio", 
+                        x_end="Fin", 
+                        y="Tarea", 
+                        color="ESTATUS",
+                        color_discrete_map=mapa_colores,
+                        hover_data=["AREA", "TIEMPO"],
+                        template="plotly_dark"
+                    )
+                    
+                    fig.update_yaxes(autorange="reversed")
+                    fig.update_layout(
+                        height=1000, 
+                        paper_bgcolor="rgba(0,0,0,0)",
+                        plot_bgcolor="rgba(0,0,0,0)",
+                        title=f"Línea de Vida - Unidad {unidad_sel}"
+                    )
+                    
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    st.warning("El plan cargado no contiene la columna 'ID_UNIDAD'.")
         else:
             st.warning(f"No se encontró ninguna asignación para la fecha: {fecha_target}")

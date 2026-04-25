@@ -3,6 +3,7 @@ import warnings
 warnings.filterwarnings("ignore", category = FutureWarning)
 
 import gspread
+import streamlit as st
 from google.oauth2.service_account import Credentials
 import numpy as np
 import pandas as pd
@@ -74,3 +75,36 @@ def lectura_hoja_gs(id_libro,
         return df
     else:
         raise Exception("❗ No hay datos online ni cache local disponible.")
+    
+
+def crear_tarjeta_kpi(titulo, valor, descripcion=""):
+    """
+    Genera una tarjeta HTML/CSS con el diseño azul moderno.
+    """
+    html_card = f"""
+    <div style="
+        background-color: #1A2235; /* Azul marino profundo (se funde mejor con el fondo oscuro) */
+        border: 1px solid #2A3654; /* Borde sutil azulado para darle profundidad */
+        border-radius: 16px; 
+        padding: 24px; 
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para despegarlo del fondo */
+    ">
+        <div>
+            <div style="color: #FFFFFF; font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 8px;">
+                {valor}
+            </div>
+            <div style="color: #8BA1C8; font-size: 1rem; font-weight: 600; line-height: 1.4; margin-bottom: 20px;">
+                {titulo} <br> <span style="font-size: 0.85rem; font-weight: 400; opacity: 0.7;">{descripcion}</span>
+            </div>
+        </div>
+        <div style="color: #4A81FF; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
+        </div>
+    </div>
+    """
+    # st.markdown renderiza el HTML directamente en Streamlit
+    st.markdown(html_card, unsafe_allow_html=True)
